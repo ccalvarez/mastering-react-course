@@ -10,7 +10,7 @@ const person = {
 
 person.walk(); // <- we get reference to the object
 
-const walk = person.walk;
-console.log(walk);
+const walk = person.walk.bind(person);
+// console.log(walk);
 
-walk(); // <- we get reference to the window object
+walk(); // <- we get reference to global object which is the window object in the browser

@@ -2,16 +2,15 @@
 // talk is another method, ES6 syntax, drop colon and function keyword
 const person = {
   name: 'Mosh',
-  walk: function() {},
+  walk() {
+    console.log(this);
+  },
   talk() {},
 };
 
-// two ways to access members
-// dot notation:
-person.talk();
+person.walk(); // <- we get reference to the object
 
-const targetMember = 'name';
-// bracket notation:
-// person['name'] = 'Caro';
-person[targetMember] = 'Caro';
-console.log(person.name);
+const walk = person.walk;
+console.log(walk);
+
+walk(); // <- we get reference to the window object

@@ -1,18 +1,4 @@
-// Problem:
-// const person = {
-//   name: 'Mosh',
-//   walk() {
-//     console.log('walk');
-//   },
-// };
-// const person2 = {
-//   name: 'Mosh',
-//   walk() {
-//     console.log('walk'); // <- duplicated implementation of walk method!
-//   },
-// };
-
-// Solution using classes:
+// Inheritance
 class Person {
   constructor(name) {
     this.name = name;
@@ -22,8 +8,16 @@ class Person {
   }
 }
 
-const person = new Person('Caro');
-const person2 = new Person('Mosh');
+// All teachers should be able to walk:
+class Teacher extends Person {
+  constructor(name, degree) {
+    super(name);
+    this.degree = degree;
+  }
+  teach() {
+    console.log(`I'm ${this.name} and my degree is ${this.degree}`);
+  }
+}
 
-person.walk();
-person2.walk();
+const teacher = new Teacher('Mosh', 'MSc');
+teacher.teach();

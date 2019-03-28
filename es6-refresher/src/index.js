@@ -1,16 +1,22 @@
-// walk is a method in the person object
-// talk is another method, ES6 syntax, drop colon and function keyword
-const person = {
-  name: 'Mosh',
-  walk() {
-    console.log(this);
-  },
-  talk() {},
-};
+// const square = function(number) {
+//   return number * number;
+// };
 
-person.walk(); // <- we get reference to the object
+const square = number => number * number;
+console.log(square(5));
 
-const walk = person.walk.bind(person);
-// console.log(walk);
+// application:
+const jobs = [
+  { id: 1, isActive: true },
+  { id: 2, isActive: true },
+  { id: 3, isActive: false },
+];
 
-walk(); // <- we get reference to global object which is the window object in the browser
+// console.log(
+//   jobs.filter(function(job) {
+//     return job.isActive;
+//   })
+// );
+console.log(jobs.filter(job => job.isActive));
+
+

@@ -1,27 +1,17 @@
-// var -> function
-// let -> block
-// const -> block
+// walk is a method in the person object
+// talk is another method, ES6 syntax, drop colon and function keyword
+const person = {
+  name: 'Mosh',
+  walk: function() {},
+  talk() {},
+};
 
-// prefer const over let, never use var
+// two ways to access members
+// dot notation:
+person.talk();
 
-// i is accessible inside the function
-// function sayHello() {
-//   for (var i = 0; i < 5; i++) {
-//     console.log(i);
-//   }
-
-//   console.log(i);
-// }
-
-// i is only accessible inside of the for block
-// function sayHello() {
-//   for (let i = 0; i < 5; i++) {
-//     console.log(i);
-//   }
-//   console.log(i);
-// }
-
-// sayHello();
-
-const x = 1;
-x = 2;
+const targetMember = 'name';
+// bracket notation:
+// person['name'] = 'Caro';
+person[targetMember] = 'Caro';
+console.log(person.name);

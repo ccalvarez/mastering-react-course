@@ -6,12 +6,13 @@ class Counter extends Component {
   //   this.handleIncrement = this.handleIncrement.bind(this);
   // }
   state = {
-    count: 3,
+    count: 0,
   };
 
   handleIncrement = () => {
     // this.state.count++;
-    console.log(this);
+    this.setState({ count: this.state.count + 1 });
+    // console.log(this);
   };
   render() {
     return (
